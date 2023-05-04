@@ -1,0 +1,51 @@
+• CTF name: Cool Name Effect
+
+	  • Challenge category: cyber talents 
+
+	                • Challenge description:-
+ first i opened the link and all i saw was an input bar and a submit button , we already know that the webmaster do not filter all the inputs so let's try to insert a javascript code let's say <script>alert(1);</script> 
+it showed the alert(1) only and script changed to forbidden so i tried any other event let's say <img src="ldk" onload=alert(1)> but nothing happend so i tried <img src="ldk" onclick=alert(1)> but nothing happened again , then i tried <img src="ldk" onerror=alert(1)> and it did show thhe flag which is "ciyypjz" .
+
+• CTF name: Encrypted Database
+
+	  • Challenge category: cyber talents 
+
+	                • Challenge description:-
+as we can see here is TopNewsJournal Website and it has some other taps such as about and help so we can check them , i checked them but i didn't find any sus info in it so let' check the source code of the home page and now you can trace the code but you won't find anything strange but  i noticed that there is a line says <script src="admin/assets/app.js"></script> so i thought that it can make me take privilege for admin login so i clicked on it and ot showed the query but we can view the admin login by removing assets/app.js 
+now we can see username and password textboxes but let's view the source code first , as you can see there is an important line says  <input type="hidden" name="db" value="secret-database/db.json" /> so let's try to take secret-database/db.json value and put it in the link , here we are!! the flag is encrypted {"flag":"ab003765f3424bf8e2c8d1d69762d72c"} so all we have to do is decode it and it will be "badboy" .
+
+• CTF name: Partition Lost 
+
+	  • Challenge category: cyber talents
+
+	          • Challenge description:  
+STEP 1: let's go and download the corrupted file. 
+STEP 2: after trying to know the file type using file command we will find that it is DOS/MBR after somesearch i found that we can use ftk imager to access the data . 
+STEP 3: after opening the file in ftk imager then go through its files we will find a rar file by the name of "fl@4.rar".
+STEP 4: Extract that file and then use the string command " strings /home/kali/Desktop/fl@4.rar " to show me the readable text and then you will find the flag inside " FLAG(701_L@b$_DR_DFIR) " .
+
+• CTF name: Search in Trash
+
+	  • Challenge category: cyber talents
+
+	          • Challenge description:  
+STEP 1: let's go and download the corrupted file. 
+STEP 2: after trying to read the file using strings command " strings /home/kali/Desktop/search-trash " we will be able to find a whole big list of strings. 
+  STEP 3: let's try to filter them by using grep command " strings /home/kali/Desktop/search-trash | grep  F "  we will find the flag inside " FLag{Fat_32_DF_2} ".
+
+• CTF name: newsletter
+
+      • Challenge category: CyberTalents
+
+                 • Challenge description:
+1- open challenge from Firefox at Kali
+2- click the link and enter any email address
+3- look at the source code and you will know that the input is an email
+4- open burp suite
+5- send a request
+6- press ctrl + R 
+7- look at the repeater and press enter + shift + u
+8- You will figure out that the email must include @ and a dot
+9- try an injection command; with or ||
+10- write @.| (The email you used) || so it will start to search from it
+11- and here you go your flag is at line 9 which is the backup file
